@@ -1,11 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (<h1>Hello World!</h1>);
+  return (
+    <BrowserRouter>
+      <Routes>
+       <Route path="/" element={<Greetings />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
-);
+export default App;
