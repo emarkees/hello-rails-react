@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import store from './redux/store.js';
 import App from './component/app.js'
 
 ReactDOM.render(
