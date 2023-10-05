@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchGreetingData = createAsyncThunk('greetings/fetch', async () => {
   try {
-    const response = await axios.get('/api/greetings/random'); // Update with your API endpoint
+    const response = await axios.get('http://127.0.0.1:3000/api/v1/greetings/random'); // Update with your API endpoint
     return response.data;
   } catch (error) {
     throw new Error(error.message);

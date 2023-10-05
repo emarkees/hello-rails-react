@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'root/index'
   root 'root#index'
+
   namespace :api do
-    get 'random_greeting', to: 'greetings#random_greeting'
+    namespace :v1 do
+      get 'greetings/random', to: 'greetings#random'
+    end
   end
 end
