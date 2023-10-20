@@ -102,7 +102,6 @@ Then, run the following command to start the app
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Coming Soon]
 
@@ -128,6 +127,6 @@ I would like to thank to the Microverse team for the learning opportunity
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](../LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
