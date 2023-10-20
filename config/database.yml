@@ -4,16 +4,16 @@ development:
   database: hello_rails_react_development
   pool: 5
   host: localhost
-  username: postgres
-  password: password
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   adapter: postgresql
   encoding: unicode
   database: hello_rails_react_test
   pool: 5
-  username: postgres
-  password: password
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 staging:
   url: <%= ENV['DATABASE_URL'] %>
