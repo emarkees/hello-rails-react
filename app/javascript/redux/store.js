@@ -3,7 +3,7 @@ import greetingsReducer from './message/messageSlice';
 
 const store = configureStore({
   reducer: {
-    greetings: greetingsReducer, // Use "greetings" as the key
+    greetings: greetingsReducer,
   },
 });
 
