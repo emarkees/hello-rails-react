@@ -26,7 +26,7 @@ const greetingSlice = createSlice({
       })
       .addCase(fetchGreetingData.fulfilled, (state, action) => {
         state.status = 'success';
-        state.greeting = action.payload;
+        state.greeting = action.payload.greeting;
       })      
       .addCase(fetchGreetingData.rejected, (state) => {
         state.status = 'rejected';
