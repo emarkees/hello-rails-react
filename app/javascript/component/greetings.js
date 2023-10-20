@@ -3,23 +3,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchGreetingData } from "../redux/message/messageSlice";
 
 const Greetings = () => {
-  const greetings = useSelector((state) => state.greeting.greetings); // Updated to state.greeting.greetings
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.greeting.status === 'loading'); // Updated to check status
+  const isLoading = useSelector((state) => state.greetings.status === 'loading');
 
   useEffect(() => {
     dispatch(fetchGreetingData());
   }, [dispatch]);
 
-  if (isLoading) { 
+  const greeting = useSelector((state) => state.greetings.greeting);
+  console.log('my greet', greeting)
+
+  if (isLoading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <h1>Random Greeting</h1>
+      <h1>Random Greetings</h1>
       <h4>Reload to get a new greeting</h4>
-      <h5>{greetings}</h5>
+      <div>{greeting}</div>
     </div>
   );
 };

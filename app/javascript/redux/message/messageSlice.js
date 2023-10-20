@@ -2,20 +2,20 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  greetings: [],
+  greeting: '',
   status: 'idle',
 };
 
-export const fetchGreetingData = createAsyncThunk('greetings/fetch', async () => {
+export const fetchGreetingData = createAsyncThunk('greetings/fetchGreetingData', async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:3000/api/v1/greetings/random'); // Update with your API endpoint
-    return response.data;
+    const response = await axios.get('http://127.0.0.1:3000/api/greetings/random_greeting');
+    return response.data
   } catch (error) {
     throw new Error(error.message);
   }
 });
 
-const greetingsSlice = createSlice({
+const greetingSlice = createSlice({
   name: 'greetings',
   initialState,
   reducers: {},
@@ -26,12 +26,12 @@ const greetingsSlice = createSlice({
       })
       .addCase(fetchGreetingData.fulfilled, (state, action) => {
         state.status = 'success';
-        state.greetings = action.payload;
-      })
+        state.greeting = action.payload;
+      })      
       .addCase(fetchGreetingData.rejected, (state) => {
         state.status = 'rejected';
       });
   },
 });
 
-export default greetingsSlice.reducer;
+export default greetingSlice.reducer;
